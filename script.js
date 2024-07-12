@@ -6,8 +6,10 @@ for (let i = 0; i < 256; i++) {
   grid.appendChild(gridElement);
 }
 
+// select all grid elements and create array from them
 const gridElements = Array.from(document.querySelectorAll('.grid > div'));
 
+// attach event listener for each square and change its background on mouse hover
 gridElements.forEach((element) => {
   element.addEventListener('mouseover', () => {
     element.style.backgroundColor = 'black';
