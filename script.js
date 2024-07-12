@@ -6,9 +6,20 @@ for (let i = 0; i < 256; i++) {
   grid.appendChild(gridElement);
 }
 
+const gridElements = Array.from(document.querySelectorAll('.grid > div'));
+
+gridElements.forEach((element) => {
+  element.addEventListener('mouseover', () => {
+    element.style.backgroundColor = 'black';
+  });
+});
+
+
+
 // TODO: 
 // - add background color change for grid elements on mouse hover
 // - add button on top asking for a number of grid elements per side for the new grid
+//   - adjust squares size to their quantity
 //   - remove existing grid
 //   - create new grid within the same space as before
 //   - limit user input to max 100
