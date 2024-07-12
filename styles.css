@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid {
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid > div {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+}
