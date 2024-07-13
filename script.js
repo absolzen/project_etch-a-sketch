@@ -29,10 +29,14 @@ function drawGrid(size, elementSize) {
     gridElement.style.height = elementSize + 'px';
     // attach event listener for each square and change its background on mouse hover
     gridElement.addEventListener('mouseover', () => {
-      gridElement.style.backgroundColor = 'black';
+      changeColor(gridElement);
     });
     grid.appendChild(gridElement);
   }
+}
+
+function changeColor(element, color = 'black') {
+  element.style.backgroundColor = color;
 }
 
 function removeGrid() {
@@ -41,10 +45,20 @@ function removeGrid() {
   }
 }
 
+function clearGrid() {
+  let squares = Array.from(document.querySelectorAll('.grid > div'));
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = 'white';
+  }
+}
+
 // draw a grid of 16x16 on start
 drawGrid(calculateGrid(side), calculateGridElement(side));
 
 // clear grid
+clearBtn.addEventListener('click', () => {
+  clearGrid();
+});
 
 // get user input for number of squares and draw a grid based on that
 gridSizeBtn.addEventListener('click', () => {
