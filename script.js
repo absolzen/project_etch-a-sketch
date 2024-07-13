@@ -1,5 +1,8 @@
 const grid = document.querySelector('.grid');
 const gridSizeBtn = document.querySelector('.gridSize');
+const randomColorBtn = document.querySelector('.randomColor');
+const fadeInBtn = document.querySelector('.fadeIn');
+const clearBtn = document.querySelector('.clear');
 
 let side = 16;
 
