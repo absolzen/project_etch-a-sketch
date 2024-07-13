@@ -24,7 +24,10 @@ function drawGrid(size, elementSize) {
     // set square size
     gridElement.style.width = elementSize + 'px';
     gridElement.style.height = elementSize + 'px';
-    
+    // attach event listener for each square and change its background on mouse hover
+    gridElement.addEventListener('mouseover', () => {
+      gridElement.style.backgroundColor = 'black';
+    });
     grid.appendChild(gridElement);
   }
 }
@@ -35,20 +38,6 @@ gridSizeBtn.addEventListener('click', () => {
   drawGrid(calculateGrid(side), calculateGridElement(side));
 });
 
-// select all grid elements and create array from them
-const gridElements = Array.from(document.querySelectorAll('.grid > div'));
-
-// attach event listener for each square and change its background on mouse hover
-gridElements.forEach((element) => {
-  element.addEventListener('mouseover', () => {
-    element.style.backgroundColor = 'black';
-  });
-});
-
-
-
-// TODO: 
-//   - adjust squares size to their quantity
 //   - remove existing grid
 //   - create new grid within the same space as before
 //   - limit user input to max 100
