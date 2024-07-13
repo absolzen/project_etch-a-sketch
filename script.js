@@ -20,6 +20,14 @@ function calculateGridElement(side) {
   return gridWidth / side;
 }
 
+let gridColor = 'black';
+let randomColor = false;
+randomColorBtn.addEventListener('click', () => randomColor = true);
+
+function random(num) {
+  return Math.floor(Math.random() * (num + 1));
+}
+
 // create grid with specified size
 function drawGrid(size, elementSize) {
   for (let i = 0; i < size; i++) {
@@ -29,14 +37,19 @@ function drawGrid(size, elementSize) {
     gridElement.style.height = elementSize + 'px';
     // attach event listener for each square and change its background on mouse hover
     gridElement.addEventListener('mouseover', () => {
-      changeColor(gridElement);
+      if (randomColor === true) {
+        gridColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      }
+      changeColor(gridElement, gridColor);
     });
     grid.appendChild(gridElement);
   }
 }
 
-function changeColor(element, color = 'black') {
+function changeColor(element, color) {
+  
   element.style.backgroundColor = color;
+
 }
 
 function removeGrid() {
