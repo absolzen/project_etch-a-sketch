@@ -20,7 +20,9 @@ function calculateGridElement(side) {
   return gridWidth / side;
 }
 
+// set default color
 let gridColor = 'black';
+// set and toggle random color
 let randomColor = false;
 randomColorBtn.addEventListener('click', () => {
   if (randomColor === false) {
@@ -29,6 +31,15 @@ randomColorBtn.addEventListener('click', () => {
     randomColor = false;
   }
 });
+
+let fadeColor = false;
+fadeInBtn.addEventListener('click', () => {
+  if (fadeColor === false) {
+    fadeColor = true;
+  } else {
+    fadeColor = false;
+  }
+})
 
 function random(num) {
   return Math.floor(Math.random() * (num + 1));
@@ -91,5 +102,4 @@ gridSizeBtn.addEventListener('click', () => {
 });
 
 // EXTRA:
-// - add randomization of square colors
 // - add progressive darkening (each step darkens color by 10%). Use opacity.
