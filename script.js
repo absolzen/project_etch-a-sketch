@@ -15,6 +15,12 @@ function drawGrid(size) {
   }
 }
 
+// get grid width for grid square width calculation
+let gridStyle = window.getComputedStyle(grid),
+    gridWidth = +gridStyle.getPropertyValue('width').replace('px', '');
+
+
+
 gridSizeBtn.addEventListener('click', () => {
   side = +prompt('Enter grid side size: ', 16);
   drawGrid(calculateGrid(side));
@@ -33,7 +39,6 @@ gridElements.forEach((element) => {
 
 
 // TODO: 
-// - add button on top asking for a number of grid elements per side for the new grid
 //   - adjust squares size to their quantity
 //   - remove existing grid
 //   - create new grid within the same space as before
