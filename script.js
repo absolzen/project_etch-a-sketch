@@ -1,11 +1,11 @@
 const grid = document.querySelector('.grid');
 const gridSizeBtn = document.querySelector('.gridSize');
 
-let side = 1;
+let side = 16;
 
 // get grid width for grid square width calculation
 let gridStyle = window.getComputedStyle(grid),
-    gridWidth = +gridStyle.getPropertyValue('width').replace('px', '');
+gridWidth = +gridStyle.getPropertyValue('width').replace('px', '');
 
 // calculate number of squares
 function calculateGrid(side) {
@@ -37,7 +37,10 @@ function clearGrid() {
     grid.removeChild(grid.firstChild);
   }
 }
-    
+
+//draw a grid of 16x16 on start
+drawGrid(calculateGrid(side), calculateGridElement(side));
+
 // get user input for number of squares and draw a grid based on that
 gridSizeBtn.addEventListener('click', () => {
   clearGrid();
