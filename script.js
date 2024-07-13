@@ -35,18 +35,20 @@ function drawGrid(size, elementSize) {
   }
 }
 
-function clearGrid() {
+function removeGrid() {
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
   }
 }
 
-//draw a grid of 16x16 on start
+// draw a grid of 16x16 on start
 drawGrid(calculateGrid(side), calculateGridElement(side));
+
+// clear grid
 
 // get user input for number of squares and draw a grid based on that
 gridSizeBtn.addEventListener('click', () => {
-  clearGrid();
+  removeGrid();
   side = +prompt('Enter grid side size: ', 16);
   // limit user input to 1 to 100
   while (side > 100 || side < 1) {
