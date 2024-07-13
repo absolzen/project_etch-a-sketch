@@ -1,10 +1,24 @@
 const grid = document.querySelector('.grid');
+const gridSizeBtn = document.querySelector('.gridSize');
 
-// create 256 divs
-for (let i = 0; i < 256; i++) {
-  const gridElement = document.createElement('div');
-  grid.appendChild(gridElement);
+let side = 0;
+
+function calculateGrid(side) {
+  return gridSize = side * side;
 }
+
+function drawGrid(size) {
+  // create grid with
+  for (let i = 0; i < gridSize; i++) {
+    const gridElement = document.createElement('div');
+    grid.appendChild(gridElement);
+  }
+}
+
+gridSizeBtn.addEventListener('click', () => {
+  side = +prompt('Enter grid side size: ', 16);
+  drawGrid(calculateGrid(side));
+});
 
 // select all grid elements and create array from them
 const gridElements = Array.from(document.querySelectorAll('.grid > div'));
@@ -19,7 +33,6 @@ gridElements.forEach((element) => {
 
 
 // TODO: 
-// - add background color change for grid elements on mouse hover
 // - add button on top asking for a number of grid elements per side for the new grid
 //   - adjust squares size to their quantity
 //   - remove existing grid
