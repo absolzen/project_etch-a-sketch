@@ -22,7 +22,13 @@ function calculateGridElement(side) {
 
 let gridColor = 'black';
 let randomColor = false;
-randomColorBtn.addEventListener('click', () => randomColor = true);
+randomColorBtn.addEventListener('click', () => {
+  if (randomColor === false) {
+    randomColor = true;
+  } else {
+    randomColor = false;
+  }
+});
 
 function random(num) {
   return Math.floor(Math.random() * (num + 1));
