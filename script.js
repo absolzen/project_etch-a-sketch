@@ -45,11 +45,12 @@ drawGrid(calculateGrid(side), calculateGridElement(side));
 gridSizeBtn.addEventListener('click', () => {
   clearGrid();
   side = +prompt('Enter grid side size: ', 16);
+  // limit user input to 1 to 100
+  while (side > 100 || side < 1) {
+    side = +prompt('Enter grid side size: ', 16);
+  }
   drawGrid(calculateGrid(side), calculateGridElement(side));
 });
-
-//   - create new grid within the same space as before
-//   - limit user input to max 100
 
 // EXTRA:
 // - add randomization of square colors
