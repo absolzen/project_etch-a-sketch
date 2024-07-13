@@ -31,14 +31,20 @@ function drawGrid(size, elementSize) {
     grid.appendChild(gridElement);
   }
 }
+
+function clearGrid() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
     
 // get user input for number of squares and draw a grid based on that
 gridSizeBtn.addEventListener('click', () => {
+  clearGrid();
   side = +prompt('Enter grid side size: ', 16);
   drawGrid(calculateGrid(side), calculateGridElement(side));
 });
 
-//   - remove existing grid
 //   - create new grid within the same space as before
 //   - limit user input to max 100
 
