@@ -32,13 +32,8 @@ randomColorBtn.addEventListener('click', () => {
   }
 });
 
-let fadeColor = false;
 fadeInBtn.addEventListener('click', () => {
-  if (fadeColor === false) {
-    fadeColor = true;
-  } else {
-    fadeColor = false;
-  }
+  changeOpacity();
 })
 
 function random(num) {
@@ -64,9 +59,20 @@ function drawGrid(size, elementSize) {
 }
 
 function changeColor(element, color) {
-  
   element.style.backgroundColor = color;
+}
 
+function changeOpacity() {
+  const gridElements = Array.from(document.querySelectorAll('.grid > div'));
+  
+  for(let i = 0; i < 10; i++) {
+    
+    
+    gridElement.addEventListener('mouseover', () => {
+      gridElement.style.opacity = i / 10; 
+
+    });
+  }
 }
 
 function removeGrid() {
@@ -81,6 +87,8 @@ function clearGrid() {
     squares[i].style.backgroundColor = 'white';
   }
 }
+
+
 
 // draw a grid of 16x16 on start
 drawGrid(calculateGrid(side), calculateGridElement(side));
