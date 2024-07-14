@@ -79,11 +79,9 @@ function removeGrid() {
 function clearGrid() {
   let squares = Array.from(document.querySelectorAll('.grid > div'));
   for (let i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = 'white';
+    squares[i].style.cssText = 'background-color: white;';
   }
 }
-
-
 
 // draw a grid of 16x16 on start
 drawGrid(calculateGrid(side), calculateGridElement(side));
@@ -103,6 +101,3 @@ gridSizeBtn.addEventListener('click', () => {
   }
   drawGrid(calculateGrid(side), calculateGridElement(side));
 });
-
-// EXTRA:
-// - add progressive darkening (each step darkens color by 10%). Use opacity.
