@@ -64,8 +64,10 @@ function changeColor(element, color) {
 
 function changeOpacity() {
   grid.addEventListener('mouseover', (event) => {
-    event.target.style.opacity = 0;
-  });
+    if (event.target.style.opacity <= 0.9) {
+      event.target.style.opacity = +event.target.style.opacity + 0.1;
+    }
+    });
 }
 
 function removeGrid() {
