@@ -33,8 +33,8 @@ randomColorBtn.addEventListener('click', () => {
 });
 
 fadeInBtn.addEventListener('click', () => {
-  changeOpacity();
-})
+    changeOpacity();
+});
 
 function random(num) {
   return Math.floor(Math.random() * (num + 1));
@@ -63,16 +63,9 @@ function changeColor(element, color) {
 }
 
 function changeOpacity() {
-  const gridElements = Array.from(document.querySelectorAll('.grid > div'));
-  
-  for(let i = 0; i < 10; i++) {
-    
-    
-    gridElement.addEventListener('mouseover', () => {
-      gridElement.style.opacity = i / 10; 
-
-    });
-  }
+  grid.addEventListener('mouseover', (event) => {
+    event.target.style.opacity = 0;
+  });
 }
 
 function removeGrid() {
